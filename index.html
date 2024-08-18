@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age 30: Tom J</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Age 30: Loading...</h1>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        <p id="age-progress"></p>
+
+        <div class="details">
+            <h2>Details</h2>
+            <p>Date: September 12</p>
+            <p>Time: 9:00 PM</p>
+            <p>Location: Men Tenten.  Nahalat Binyamin St 57, Tel Aviv-Yafo</p>
+            <p>Food:</p>
+            <img src="food.jpg" alt="Food Image">
+            <p>Drinks:</p>
+            <img src="drinks.jpg" alt="Drinks Image">
+        </div>
+
+        <div class="buttons">
+            <button class="btn attend" onclick="openWhatsApp('attending')">Attending</button>
+            <button class="btn attend-plus-one" onclick="openWhatsApp('attending plus one')">Attending +1</button>
+            <button class="btn not-attending" id="not-attending" onmouseover="runAway()">Not Attending</button>
+        </div>
+    </div>
+    <div class="fireworks"></div>
+    <script src="script.js"></script>
+</body>
+</html>

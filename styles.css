@@ -1,0 +1,154 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Fallback color */
+    background-image: url('background.png');
+    background-size: cover; /* Stretches the image to cover the entire page */
+    background-repeat: no-repeat; /* Ensures the image does not repeat */
+    background-position: center; /* Centers the image */
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Adjusts opacity with a black overlay */
+    z-index: -1; /* Sends it behind the content */
+    background-image: url('background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5; /* Set the opacity to 50% */
+}
+
+.container {
+    position: relative;
+    z-index: 1; /* Keeps content above the background image */
+    margin-top: 50px;
+}
+
+/* Rest of your styles remain unchanged */
+.large-text {
+    font-size: 2em; /* Adjust the size as needed */
+    color: #f5a623; /* Optional: Change the color to make it stand out */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    background-image: url('your-generated-image.jpg'); /* Replace with your generated image file name */
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+}
+
+/* Rest of your styles remain unchanged */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    background-image: url('your-generated-image.jpg'); /* Replace with your generated image file name */
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+h1 {
+    color: #f5a623;
+}
+
+.progress-bar {
+    width: 80%;
+    background-color: #444;
+    margin: 20px auto;
+    height: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background-color: #8a2be2;
+    border-radius: 15px;
+    animation: loadProgress 3s ease-in-out forwards;
+}
+
+@keyframes loadProgress {
+    from { width: 0; }
+    to { width: 99.76%; } /* Use your calculated percentage here */
+}
+
+.details {
+    margin-top: 30px;
+    color: #f5a623;
+}
+
+.details img {
+    width: 50%; /* Adjust the percentage to control the size of the images */
+    height: auto; /* Maintain the aspect ratio */
+    margin-top: 10px; /* Add some space above the images */
+    margin-bottom: 20px; /* Add some space below the images */
+    border-radius: 10px; /* Optional: adds rounded corners for a nicer look */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.buttons {
+    margin-top: 40px;
+}
+
+.btn {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.attend {
+    background-color: #4CAF50;
+}
+
+.attend-plus-one {
+    background-color: #008CBA;
+}
+
+.not-attending {
+    background-color: #f44336;
+}
+
+.not-attending:hover {
+    cursor: not-allowed;
+}
+
+.fireworks {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+}
+
+.fireworks.active {
+    display: block;
+}
+
+@keyframes fireworks {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
