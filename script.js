@@ -6,36 +6,81 @@ window.onload = function() {
     const totalDaysTill30 = Math.floor((thirtiethBirthday - birthDate) / (1000 * 60 * 60 * 24));
     const progressPercentage = (daysLived / totalDaysTill30) * 100;
 
-    const averageLifespanDays = 82 * 365; // Average lifespan in Israel for males
+    const averageLifespanDays = 82 * 365;
     const percentageLivedOfLifespan = (daysLived / averageLifespanDays) * 100;
 
-    document.querySelector('.progress').style.width = progressPercentage + '%';
+    document.querySelector('#progress-age .progress').style.width = progressPercentage + '%';
     document.getElementById('age-progress').innerHTML = `
-        <span class="large-text">${progressPercentage.toFixed(2)}% </span><br>
-        Average male lifespan in Israel: 82 years<br>
-        I've lived ${percentageLivedOfLifespan.toFixed(2)}% of my life.<br>
-        let's drink
+        <span class="large-text">${progressPercentage.toFixed(2)}%</span>
     `;
-}
 
-function runAway() {
-    const button = document.getElementById('not-attending');
-    button.style.position = 'absolute';
-    button.style.left = Math.random() * (window.innerWidth - button.offsetWidth) + 'px';
-    button.style.top = Math.random() * (window.innerHeight - button.offsetHeight) + 'px';
-}
+    document.querySelector('#progress-life .progress').style.width = percentageLivedOfLifespan + '%';
+    document.getElementById('life-progress').innerHTML = `
+        <span class="large-text">${percentageLivedOfLifespan.toFixed(2)}%</span>
+        <p class="small-text">*based on average male lifespan</p>
+    `;
+
+    // Initialize fireworks animation
+    const fireworksContainer = document.getElementById('fireworks');
+    const fireworks = new Fireworks(fireworksContainer, {
+        rocketsPoint: 50,
+        hue: { min: 0, max: 360 },
+        delay: { min: 15, max: 30 },
+        speed: 2,
+        acceleration: 1.05,
+        friction: 0.98,
+        gravity: 1.5,
+        particles: 50,
+        trace: 3,
+        traceSpeed: 10,
+        explosion: 5,
+        intensity: 30,
+        flickering: 50,
+        lineStyle: 'round',
+        fadeOut: true,
+        startDelay: 30,
+        boundaries: {
+            top: 50,
+            bottom: fireworksContainer.clientHeight,
+            left: 50,
+            right: fireworksContainer.clientWidth
+        },
+        sound: {
+            enable: true,
+            files: [
+                'https://cdn.jsdelivr.net/npm/fireworks-js@latest/dist/sounds/explosion0.mp3',
+                'https://cdn.jsdelivr.net/npm/fireworks-js@latest/dist/sounds/explosion1.mp3',
+                'https://cdn.jsdelivr.net/npm/fireworks-js@latest/dist/sounds/explosion2.mp3'
+            ],
+            volume: { min: 4, max: 8 }
+        },
+        mouse: {
+            click: false,
+            move: false,
+            max: 1
+        }
+    });
+
+    fireworks.start();
+
+    // Not Attending button behavior
+    const notAttendingButton = document.getElementById('not-attending');
+    notAttendingButton.addEventListener('click', () => {
+        alert("Yeah right, try again");
+    });
+};
 
 function openWhatsApp(status) {
     const phoneNumber = '972509781166'; // Replace with your actual phone number
     let message = '';
 
     if (status === 'attending') {
-        message = 'Hey Tom, I am attending.'; // Replace 'text1' with your actual message for attending
+        message = 'Hey Tom, I am attending.';
     } else if (status === 'attending plus one') {
-        message = 'Hey Tom, I am attending PLUS ONE.'; // Replace 'text2' with your actual message for attending plus one
+        message = 'Hey Tom, I am attending PLUS ONE.';
     }
 
-    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`);
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
 }
 
 // Attach these functions to the buttons directly
