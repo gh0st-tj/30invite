@@ -3,35 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Age 30: Tom J</title>
+    <title>LVL30: Loading...</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Age 30: Loading...</h1>
-        <div class="progress-bar">
-            <div class="progress"></div>
+    <section id="hero" class="section">
+        <div id="fireworks"></div>
+        <div class="container">
+            <h1>My 30th Birthday</h1>
+            <p class="subtitle"></p>
         </div>
-        <p id="age-progress"></p>
+    </section>
 
-        <div class="details">
-            <h2>Details</h2>
+    <section id="progress-age" class="section">
+        <div class="container">
+            <h2>LVL 30: Loading...</h2>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div id="age-progress"></div>
+        </div>
+    </section>
+
+    <section id="progress-life" class="section">
+        <div class="container">
+            <h2>Life:</h2>
+            <div class="progress-bar life-progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div id="life-progress"></div>
+        </div>
+    </section>
+
+    <section id="details" class="section">
+        <div class="container">
+            <h2>Event Details</h2>
             <p>Date: September 12</p>
             <p>Time: 9:00 PM</p>
-            <p>Location: Men Tenten.  Nahalat Binyamin St 57, Tel Aviv-Yafo</p>
-            <p>Food:</p>
+            <p>Location: Men Tenten, Nahalat Binyamin St 57, Tel Aviv-Yafo</p>
+        </div>
+    </section>
+
+    <section id="food" class="section">
+        <div class="container">
+            <h2>Food</h2>
             <img src="food.jpg" alt="Food Image">
-            <p>Drinks:</p>
+        </div>
+    </section>
+
+    <section id="drinks" class="section">
+        <div class="container">
+            <h2>Drinks</h2>
             <img src="drinks.jpg" alt="Drinks Image">
         </div>
+    </section>
 
-        <div class="buttons">
-            <button class="btn attend" onclick="openWhatsApp('attending')">Attending</button>
-            <button class="btn attend-plus-one" onclick="openWhatsApp('attending plus one')">Attending +1</button>
-            <button class="btn not-attending" id="not-attending" onmouseover="runAway()">Not Attending</button>
+    <section id="rsvp" class="section">
+        <div class="container">
+            <h2>RSVP</h2>
+            <div class="buttons">
+                <button class="btn attend">Attending</button>
+                <button class="btn attend-plus-one">Attending +1</button>
+                <button id="not-attending" class="btn">Not Attending</button>
+            </div>
         </div>
-    </div>
-    <div class="fireworks"></div>
+    </section>
+
+    <footer>
+        <p>see u soon</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js@latest/dist/fireworks.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
